@@ -1,0 +1,56 @@
+<div class="panel-header panel-header-sm">
+  <div class="header text-center">
+    <h2 class="title">Manage Roles</h2>
+  </div>
+</div>
+<div class="main-content">
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">{{this.action}} Role</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Role</label>
+                  <input type="text" name="role" class="form-control" [(ngModel)]="role.name">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Rate</label>
+                  <input type="number" name="rate" class="form-control" [(ngModel)]="role.rate">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <button class="btn-round btn-sm" (click)="save()">
+                    <span><i class="fa fa-save"></i></span>
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <button class="btn-round btn-sm" (click)="cancel()">
+                    <span><i class="fa fa-backward"></i></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

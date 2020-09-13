@@ -1,0 +1,84 @@
+<div class="panel-header panel-header-sm panel-info">
+  <div class="header text-center">
+    <h2 class="title">Tasks</h2>
+    <canvas baseChart id="bigDashboardChart"></canvas>
+
+  </div>
+</div>
+<div class="main-content">
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> All Created Tasks</h4>
+        </div>
+        <div class="card-body">
+          <div>
+            <button class="btn-round btn-sm" (click)="addTask('')">
+              <span class="fa fa-plus">  Create New Task</span>
+            </button>
+          </div>
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+              <th>
+                Date
+              </th>
+              <th>
+                Name
+              </th>
+              <th>
+                Description
+              </th>
+              <th>
+                Status
+              </th>
+              <th class="text-right">
+                Duration
+              </th>
+              <th>
+                Actions
+              </th>
+              <th>
+
+              </th>
+              </thead>
+              <tbody>
+              <tr *ngFor="let task of tasks">
+                <td>
+                  {{ formatMyDate(task.date)}}
+                </td>
+                <td>
+                  {{task.name}}
+                </td>
+                <td>
+                  {{task.description}}
+                </td>
+                <td>
+                  {{task.status}}
+                </td>
+                <td class="text-right">
+                  {{task.duration}}
+                </td>
+                <td>
+                  <button class="btn-round btn-sm" (click)="addTask(task.id)">
+                    <span><i class="fa fa-edit"></i></span>
+                  </button>
+                </td>
+                <td>
+                  <button class="btn-round btn-sm" (click)="deleteTask(task.id)">
+                    <span><i class="fa fa-trash"></i></span>
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

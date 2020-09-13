@@ -1,0 +1,216 @@
+<div class="panel-header panel-header-sm">
+  <div class="header text-center">
+    <h2 class="title">Employee Profile</h2>
+    <canvas baseChart id="bigDashboardChart"></canvas>
+
+  </div>
+</div>
+<div class="main-content">
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> All Casual Employees</h4>
+        </div>
+        <div class="form-group">
+          <div class="author text-lg-center">
+            <img class="profile-image img-circle" src="imageUrl" alt="...">
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+                <button class="btn-round btn-sm" (click)="addEmployee('')">
+                  <span class="now-ui-icons users_single-02">  Add New Employee</span>
+                </button>
+          </div>
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  First Name
+                </th>
+                <th>
+                  Last Surname
+                </th>
+                <th>
+                  Id Number
+                </th>
+                <th>
+                  Role
+                </th>
+                <th>
+                  Address
+                </th>
+              <th>
+                Actions
+              </th>
+              <th>
+
+              </th>
+              </thead>
+              <tbody *ngFor="let employee of employees">
+                <tr>
+                  <td>
+                    {{employee.name}}
+                  </td>
+                  <td>
+                    {{employee.last_Name}}
+                  </td>
+                  <td>
+                    {{employee.id_Number}}
+                  </td>
+                  <td>
+                    {{employee.role.name}}
+                  </td>
+                  <td>
+                    {{employee.address}}
+                  </td>
+                  <td>
+                    <button class="btn-round btn-sm" (click)="addEmployee(employee.id)">
+                      <span><i class="fa fa-edit"></i></span>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="btn-round btn-sm" (click)="deleteEmployee(employee.id)">
+                      <span><i class="fa fa-trash"></i></span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--<div class="col-md-12">
+      <div class="card card-plain">
+        <div class="card-header">
+          <h4 class="card-title"> Table on Plain Background</h4>
+          <p class="category"> Here is a subtitle for this table</p>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  Name
+                </th>
+                <th>
+                  Country
+                </th>
+                <th>
+                  City
+                </th>
+                <th class="text-right">
+                  Salary
+                </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Dakota Rice
+                  </td>
+                  <td>
+                    Niger
+                  </td>
+                  <td>
+                    Oud-Turnhout
+                  </td>
+                  <td class="text-right">
+                    $36,738
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Minerva Hooper
+                  </td>
+                  <td>
+                    Curaçao
+                  </td>
+                  <td>
+                    Sinaai-Waas
+                  </td>
+                  <td class="text-right">
+                    $23,789
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Sage Rodriguez
+                  </td>
+                  <td>
+                    Netherlands
+                  </td>
+                  <td>
+                    Baileux
+                  </td>
+                  <td class="text-right">
+                    $56,142
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Philip Chaney
+                  </td>
+                  <td>
+                    Korea, South
+                  </td>
+                  <td>
+                    Overland Park
+                  </td>
+                  <td class="text-right">
+                    $38,735
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Doris Greene
+                  </td>
+                  <td>
+                    Malawi
+                  </td>
+                  <td>
+                    Feldkirchen in Kärnten
+                  </td>
+                  <td class="text-right">
+                    $63,542
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Mason Porter
+                  </td>
+                  <td>
+                    Chile
+                  </td>
+                  <td>
+                    Gloucester
+                  </td>
+                  <td class="text-right">
+                    $78,615
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Jon Porter
+                  </td>
+                  <td>
+                    Portugal
+                  </td>
+                  <td>
+                    Gloucester
+                  </td>
+                  <td class="text-right">
+                    $98,615
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>-->
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="panel-header panel-header-sm">
+  <div class="header text-center">
+    <h2 class="title">Manage Roles</h2>
+  </div>
+</div>
+
+<div class="main-content">
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> All Roles</h4>
+        </div>
+        <div class="card-body">
+          <div>
+            <button class="btn-round btn-sm" (click)="addRole()">
+              <span class="fa fa-plus">  Add New Role</span>
+            </button>
+          </div>
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+              <th>
+                Name
+              </th>
+              <th>
+                Rate
+              </th>
+              <th>
+                Actions
+              </th>
+              </thead>
+              <tbody>
+              <tr *ngFor="let role of roles">
+                <td>
+                  {{role.name}}
+                </td>
+                <td>
+                  {{role.rate}}
+                </td>
+                <td>
+                  <div class="row">
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <button class="btn-round btn-sm" (click)="editRole(role.id)">
+                        <span><i class="fa fa-edit"></i></span>
+                      </button>
+                    </div>
+                  </div>
+                    <div class="col-md-2">
+                      <div class="form-group">
+                        <button class="btn-round btn-sm" (click)="deleteRole(role.id)">
+                          <span><i class="fa fa-trash"></i></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+<div class="panel-header panel-header-sm">
+  <div class="header text-center">
+    <h2 class="title">Employee Profile</h2>
+  </div>
+</div>
+<div class="main-content">
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">{{this.action}} Profile</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+            <div class="author text-lg-center">
+                <img class="profile-image img-circle" src="{{url}}" alt="...">
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" name="name" class="form-control" [(ngModel)]="employee.name" (ngModelChange)="onNameChange()">
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" name="lastName" class="form-control" [(ngModel)]="employee.last_Name" (ngModelChange)="onNameChange()">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Identity Number</label>
+                  <input type="text" name="idNumber" class="form-control" [(ngModel)]="employee.id_Number" (ngModelChange)="onNameChange()" maxlength="13">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Address</label>
+                  <input type="text" name="address" class="form-control" [(ngModel)]="employee.address" (ngModelChange)="onNameChange()">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <button class="btn-round btn-sm" (click)="fileInput.click()">
+                    <!--<span class="now-ui-icons users_single-02">  Upload Display Picture</span>-->
+                    <span><i class="fa fa-camera"></i></span>
+                    <input #fileInput type="file" (change)="loadFile($event)" style="display:none;" />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <h4>Banking Details</h4>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>Bank</label>
+                  <input type="text" name="bank" class="form-control" [(ngModel)]="employee.bank_Name" (ngModelChange)="onBankChange()" maxlength="30">
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label>Account Number</label>
+                  <input type="text" name="accNumber" class="form-control" [(ngModel)]="employee.bank_Account" (ngModelChange)="onAccChange()" maxlength="12">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label>Branch Number</label>
+                  <input type="text" name="branchNumber" class="form-control" [(ngModel)]="employee.bank_Branch" (ngModelChange)="onBranchChange()" maxlength="6">
+                </div>
+              </div>
+            </div>
+            <hr>
+            <h4>Employment Details</h4>
+            <div class="row">
+              <div class="col-md-7">
+                <div class="form-group">
+                  <label>Role</label>
+                  <select class="form-control" name="role" [(ngModel)]="employee.role.id">
+                    <option *ngFor="let role of roles" [value]="role.id">{{role.name}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+              <button class="btn-round btn-sm" (click)="save()">
+                <span><i class="fa fa-save"></i></span>
+              </button>
+            </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <button class="btn-round btn-sm" (click)="cancel()">
+                    <span><i class="fa fa-backward"></i></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
